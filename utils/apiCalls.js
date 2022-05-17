@@ -12,23 +12,37 @@ censusBaseURL = `https://api.census.gov/data/2019/acs/acs5?get=NAME,B19301_001E&
 // }
 
 module.exports = {
-  getMovers: (loc) => {
-    return axios.get(yelpBaseURL + "term=movers&location=" + loc, {
-      headers: {
-        Authorization: "Bearer " + process.env.YELP_API_SECRET, //the token is a variable which holds the token
-      },
-    });
-  },
-  getHotels: (loc) =>{
-    return axios.get(yelpBaseURL+"term=hotels&location=" + loc, {
+  // getMovers: (loc) => {
+  //   return axios.get(yelpBaseURL + "term=movers&location=" + loc, {
+  //     headers: {
+  //       Authorization: "Bearer " + process.env.YELP_API_SECRET, //the token is a variable which holds the token
+  //     },
+  //   });
+  // },
+    getMovers: (storeZip) => {
+      return axios.get(yelpBaseURL + "term=movers&location=" + storeZip, {
+        headers: {
+          Authorization: "Bearer " + process.env.YELP_API_SECRET, //the token is a variable which holds the token
+        },
+      });
+    },
+  // getHotels: (loc) =>{
+  //   return axios.get(yelpBaseURL+"term=hotels&location=" + loc, {
+  //     headers: {
+  //       Authorization: "Bearer " + process.env.YELP_API_SECRET,
+  //     },
+  //   });
+  // },
+  getHotels: (storeZip) =>{
+    return axios.get(yelpBaseURL+"term=hotels&location=" + storeZip, {
       headers: {
         Authorization: "Bearer " + process.env.YELP_API_SECRET,
       },
     });
   },
   
-  getSchools: (zipCode) => {
-    return axios.get(greatSchoolsBaseURL + "zip=" + zipCode, {
+  getSchools: (storeZip) => {
+    return axios.get(greatSchoolsBaseURL + "zip=" + storeZip, {
       headers: {
         "X-API-Key": process.env.SCHOOL_API,
       },

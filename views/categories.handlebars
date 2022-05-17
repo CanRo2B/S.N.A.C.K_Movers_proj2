@@ -7,7 +7,7 @@
                 <img>
                 <p class="has-text-centered">Score of Neighborhood: 7 </p>
                 <p class="has-text-centered">Average Median Household Income: $42,000 </p>
-                <p id="grab-zip" class="has-text-centered">Zipcode: 33027 </p>
+                <p id="grab-zip" class="has-text-centered">Zipcode: {{storeZip}} </p>
 
         </aside>
      {{!-- </section> --}}
@@ -20,7 +20,7 @@
                           <div class="container d-flex align-items-center justify-content-center text-center h-100">
                             <div class="text-white">                           
                               <h3 class="m-4">Moving Companies</h3>
-                              <a class="btn btn-outline-light btn-med m-2" href="/views/movers.handlebars" role="button"
+                              <a id = "mover-button" class="btn btn-outline-light btn-med m-2"  role="button"
                                 rel="nofollow" target="_blank">Navigate Moving companies</a>
                             </div>
                           </div>
@@ -35,7 +35,7 @@
                           <div class="container d-flex align-items-center justify-content-center text-center h-100">
                             <div class="text-white">                           
                               <h3 class="m-4">Hotels</h3>
-                              <a class="btn btn-outline-light btn-med m-2" href="/views/hotels.handlebars" role="button"
+                              <a id= "hotel-button" class="btn btn-outline-light btn-med m-2"  role="button"
                                 rel="nofollow" target="_blank">Explore Local Hotels</a>
                             </div>
                           </div>
@@ -62,8 +62,10 @@
         </section>
 
     </main> 
-    {{!-- <script src="/js/categories.js"></script> --}}
+    <script src="/js/categories.js"></script>
     <script src="/js/profile.js"></script>
+    <script src="/js/hotels.js"></script>
+    <script src="/js/movers.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

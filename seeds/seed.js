@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User } = require('../models');
+const { User, Categories } = require('../models');
 
 const userData = require('./userData.json');
 const categoryData = require('./categoryData.json');
@@ -17,6 +17,8 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
+
+  
 
 
   process.exit(0);
